@@ -16,7 +16,7 @@ import (
 	"sync"
 	"time"
 
-	newrelic "github.com/newrelic/go-agent"
+	newrelic "github.com/Easypay/go-agent"
 )
 
 func index(w http.ResponseWriter, r *http.Request) {

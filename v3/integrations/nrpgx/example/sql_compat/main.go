@@ -25,8 +25,8 @@ import (
 	"os"
 	"time"
 
-	_ "github.com/newrelic/go-agent/v3/integrations/nrpgx"
-	"github.com/newrelic/go-agent/v3/newrelic"
+	_ "github.com/Easypay/go-agent/v3/integrations/nrpgx"
+	"github.com/Easypay/go-agent/v3/newrelic"
 )
 
 func main() {

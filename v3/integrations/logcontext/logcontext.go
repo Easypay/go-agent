@@ -8,11 +8,11 @@
 // framework that does not already have a New Relic plugin for log decoration,
 // use this package to manually add logging context.
 //
-// See https://github.com/newrelic/newrelic-exporter-specs/tree/master/logging
+// See https://github.com/Easypay/newrelic-exporter-specs/tree/master/logging
 // for a complete specification.
 package logcontext
 
-import newrelic "github.com/newrelic/go-agent/v3/newrelic"
+import newrelic "github.com/Easypay/go-agent/v3/newrelic"
 
 // Keys used for logging context JSON.
 const (

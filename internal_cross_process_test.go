@@ -11,8 +11,8 @@ import (
 
 	"errors"
 
-	"github.com/newrelic/go-agent/internal"
-	"github.com/newrelic/go-agent/internal/cat"
+	"github.com/Easypay/go-agent/internal"
+	"github.com/Easypay/go-agent/internal/cat"
 )
 
 var (

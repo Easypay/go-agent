@@ -15,7 +15,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/newrelic/go-agent/internal/logger"
+	"github.com/Easypay/go-agent/internal/logger"
 )
 
 const (

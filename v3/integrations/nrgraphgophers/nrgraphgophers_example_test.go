@@ -10,8 +10,8 @@ import (
 
 	graphql "github.com/graph-gophers/graphql-go"
 	"github.com/graph-gophers/graphql-go/relay"
-	"github.com/newrelic/go-agent/v3/integrations/nrgraphgophers"
-	"github.com/newrelic/go-agent/v3/newrelic"
+	"github.com/Easypay/go-agent/v3/integrations/nrgraphgophers"
+	"github.com/Easypay/go-agent/v3/newrelic"
 )
 
 type query struct{}

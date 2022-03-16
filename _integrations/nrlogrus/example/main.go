@@ -9,8 +9,8 @@ import (
 	"net/http"
 	"os"
 
-	newrelic "github.com/newrelic/go-agent"
-	"github.com/newrelic/go-agent/_integrations/nrlogrus"
+	newrelic "github.com/Easypay/go-agent"
+	"github.com/Easypay/go-agent/_integrations/nrlogrus"
 	"github.com/sirupsen/logrus"
 )
 

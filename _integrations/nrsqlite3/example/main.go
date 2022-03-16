@@ -10,8 +10,8 @@ import (
 	"os"
 	"time"
 
-	newrelic "github.com/newrelic/go-agent"
-	_ "github.com/newrelic/go-agent/_integrations/nrsqlite3"
+	newrelic "github.com/Easypay/go-agent"
+	_ "github.com/Easypay/go-agent/_integrations/nrsqlite3"
 )
 
 func mustGetEnv(key string) string {

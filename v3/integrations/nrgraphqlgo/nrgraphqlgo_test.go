@@ -10,9 +10,9 @@ import (
 	"testing"
 
 	"github.com/graphql-go/graphql"
-	"github.com/newrelic/go-agent/v3/internal"
-	"github.com/newrelic/go-agent/v3/internal/integrationsupport"
-	"github.com/newrelic/go-agent/v3/newrelic"
+	"github.com/Easypay/go-agent/v3/internal"
+	"github.com/Easypay/go-agent/v3/internal/integrationsupport"
+	"github.com/Easypay/go-agent/v3/newrelic"
 )
 
 var schema = func() graphql.Schema {

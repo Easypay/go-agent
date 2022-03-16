@@ -28,7 +28,7 @@
 // call, or globally via the Configure function.
 //
 // Full example:
-// https://github.com/newrelic/go-agent/blob/master/v3/integrations/nrgrpc/example/server/server.go
+// https://github.com/Easypay/go-agent/blob/master/v3/integrations/nrgrpc/example/server/server.go
 //
 
 package nrgrpc
@@ -38,7 +38,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/newrelic/go-agent/v3/newrelic"
+	"github.com/Easypay/go-agent/v3/newrelic"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"

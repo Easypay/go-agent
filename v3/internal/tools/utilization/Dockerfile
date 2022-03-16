@@ -15,8 +15,8 @@ FROM golang:1
 
 ENV GOPATH /tmp/gopath
 
-RUN mkdir -p $GOPATH/src/github.com/newrelic/go-agent/
+RUN mkdir -p $GOPATH/src/github.com/Easypay/go-agent/
 
-COPY . $GOPATH/src/github.com/newrelic/go-agent/
+COPY . $GOPATH/src/github.com/Easypay/go-agent/
 
-CMD go run ${GOPATH}/src/github.com/newrelic/go-agent/internal/tools/utilization/main.go
+CMD go run ${GOPATH}/src/github.com/Easypay/go-agent/internal/tools/utilization/main.go

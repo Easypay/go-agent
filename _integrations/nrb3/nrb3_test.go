@@ -7,9 +7,9 @@ import (
 	"net/http"
 	"testing"
 
-	newrelic "github.com/newrelic/go-agent"
-	"github.com/newrelic/go-agent/internal"
-	"github.com/newrelic/go-agent/internal/integrationsupport"
+	newrelic "github.com/Easypay/go-agent"
+	"github.com/Easypay/go-agent/internal"
+	"github.com/Easypay/go-agent/internal/integrationsupport"
 )
 
 func TestNewRoundTripperNil(t *testing.T) {

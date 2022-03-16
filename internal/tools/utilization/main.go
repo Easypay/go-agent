@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/newrelic/go-agent"
-	"github.com/newrelic/go-agent/internal/utilization"
+	"github.com/Easypay/go-agent"
+	"github.com/Easypay/go-agent/internal/utilization"
 )
 
 func main() {

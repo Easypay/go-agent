@@ -9,8 +9,8 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/newrelic/go-agent/internal/cat"
-	"github.com/newrelic/go-agent/internal/crossagent"
+	"github.com/Easypay/go-agent/internal/cat"
+	"github.com/Easypay/go-agent/internal/crossagent"
 )
 
 type harvestedTxnTrace struct {

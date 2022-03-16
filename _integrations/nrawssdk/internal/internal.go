@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"reflect"
 
-	newrelic "github.com/newrelic/go-agent"
-	"github.com/newrelic/go-agent/internal/integrationsupport"
+	newrelic "github.com/Easypay/go-agent"
+	"github.com/Easypay/go-agent/internal/integrationsupport"
 )
 
 type contextKeyType struct{}

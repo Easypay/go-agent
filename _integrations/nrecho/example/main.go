@@ -10,8 +10,8 @@ import (
 
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
-	"github.com/newrelic/go-agent"
-	"github.com/newrelic/go-agent/_integrations/nrecho"
+	"github.com/Easypay/go-agent"
+	"github.com/Easypay/go-agent/_integrations/nrecho"
 )
 
 func mustGetEnv(key string) string {

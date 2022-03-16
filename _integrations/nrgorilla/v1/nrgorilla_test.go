@@ -9,9 +9,9 @@ import (
 	"testing"
 
 	"github.com/gorilla/mux"
-	newrelic "github.com/newrelic/go-agent"
-	"github.com/newrelic/go-agent/internal"
-	"github.com/newrelic/go-agent/internal/integrationsupport"
+	newrelic "github.com/Easypay/go-agent"
+	"github.com/Easypay/go-agent/internal"
+	"github.com/Easypay/go-agent/internal/integrationsupport"
 )
 
 func makeHandler(text string) http.Handler {

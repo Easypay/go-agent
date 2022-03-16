@@ -11,9 +11,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/newrelic/go-agent/internal/cat"
-	"github.com/newrelic/go-agent/internal/crossagent"
-	"github.com/newrelic/go-agent/internal/logger"
+	"github.com/Easypay/go-agent/internal/cat"
+	"github.com/Easypay/go-agent/internal/crossagent"
+	"github.com/Easypay/go-agent/internal/logger"
 )
 
 func TestStartEndSegment(t *testing.T) {

@@ -5,8 +5,8 @@ package nrlogxi_test
 
 import (
 	log "github.com/mgutz/logxi/v1"
-	nrlogxi "github.com/newrelic/go-agent/v3/integrations/nrlogxi"
-	newrelic "github.com/newrelic/go-agent/v3/newrelic"
+	nrlogxi "github.com/Easypay/go-agent/v3/integrations/nrlogxi"
+	newrelic "github.com/Easypay/go-agent/v3/newrelic"
 )
 
 func Example() {

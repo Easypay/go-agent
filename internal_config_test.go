@@ -13,8 +13,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/newrelic/go-agent/internal"
-	"github.com/newrelic/go-agent/internal/utilization"
+	"github.com/Easypay/go-agent/internal"
+	"github.com/Easypay/go-agent/internal/utilization"
 )
 
 var (

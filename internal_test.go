@@ -12,7 +12,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/newrelic/go-agent/internal"
+	"github.com/Easypay/go-agent/internal"
 )
 
 var (
