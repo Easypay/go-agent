@@ -6,8 +6,8 @@ package nrmysql
 import (
 	"testing"
 
-	"github.com/go-sql-driver/mysql"
 	newrelic "github.com/Easypay/go-agent/v3/newrelic"
+	"github.com/go-sql-driver/mysql"
 )
 
 func TestParseDSN(t *testing.T) {
