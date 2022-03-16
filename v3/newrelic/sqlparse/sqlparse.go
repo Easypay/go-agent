@@ -63,6 +63,7 @@ func ParseQuery(segment *newrelic.DatastoreSegment, query string) {
 	op := strings.ToLower(firstWordRegex.FindString(s))
 	if rg, ok := sqlOperations[op]; ok {
 		segment.Operation = op
+		segment.ParameterizedQuery = query // <-- save parameterized query
 		if nil != rg {
 			if m := rg.FindStringSubmatch(s); len(m) > 1 {
 				segment.Collection = extractTable(m[1])
@@ -71,7 +72,7 @@ func ParseQuery(segment *newrelic.DatastoreSegment, query string) {
 	}
 }
 
-// `ParseArgs` would set query parameters using ordinal (since name might be empty)
+// ParseArgs would set query parameters using ordinal (since name might be empty)
 func ParseArgs(segment *newrelic.DatastoreSegment, args []driver.NamedValue) {
 	if segment == nil || len(args) == 0 {
 		return
