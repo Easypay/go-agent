@@ -4,6 +4,8 @@
 package sqlparse
 
 import (
+	"database/sql/driver"
+	"fmt"
 	"regexp"
 	"strings"
 
@@ -66,5 +68,20 @@ func ParseQuery(segment *newrelic.DatastoreSegment, query string) {
 				segment.Collection = extractTable(m[1])
 			}
 		}
+	}
+}
+
+// `ParseArgs` would set query parameters using ordinal (since name might be empty)
+func ParseArgs(segment *newrelic.DatastoreSegment, args []driver.NamedValue) {
+	if segment == nil || len(args) == 0 {
+		return
+	}
+
+	if segment.QueryParameters == nil {
+		segment.QueryParameters = map[string]interface{}{}
+	}
+
+	for _, arg := range args {
+		segment.QueryParameters[fmt.Sprintf("%d", arg.Ordinal)] = arg.Value
 	}
 }

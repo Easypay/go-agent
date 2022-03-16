@@ -1,6 +1,7 @@
 // Copyright 2020 New Relic Corporation. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
+//go:build go1.10
 // +build go1.10
 
 // Package nrmysql instruments https://github.com/go-sql-driver/mysql.
@@ -51,10 +52,10 @@ import (
 	"database/sql"
 	"net"
 
-	"github.com/go-sql-driver/mysql"
 	"github.com/Easypay/go-agent/v3/internal"
 	"github.com/Easypay/go-agent/v3/newrelic"
 	"github.com/Easypay/go-agent/v3/newrelic/sqlparse"
+	"github.com/go-sql-driver/mysql"
 )
 
 var (
@@ -64,6 +65,7 @@ var (
 		},
 		ParseQuery: sqlparse.ParseQuery,
 		ParseDSN:   parseDSN,
+		ParseArgs:  sqlparse.ParseArgs,
 	}
 )
 

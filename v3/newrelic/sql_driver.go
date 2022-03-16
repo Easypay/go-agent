@@ -1,6 +1,7 @@
 // Copyright 2020 New Relic Corporation. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
+//go:build go1.10
 // +build go1.10
 
 package newrelic
@@ -20,6 +21,7 @@ type SQLDriverSegmentBuilder struct {
 	BaseSegment DatastoreSegment
 	ParseQuery  func(segment *DatastoreSegment, query string)
 	ParseDSN    func(segment *DatastoreSegment, dataSourceName string)
+	ParseArgs   func(segment *DatastoreSegment, args []driver.NamedValue)
 }
 
 // InstrumentSQLDriver wraps a driver.Driver, adding instrumentation for exec
@@ -172,6 +174,7 @@ func (w *wrapConn) ExecContext(ctx context.Context, query string, args []driver.
 	result, err := w.original.(driver.ExecerContext).ExecContext(ctx, query, args)
 	if err != driver.ErrSkip {
 		seg := w.bld.useQuery(query).startSegmentAt(ctx, startTime)
+		w.bld.ParseArgs(&seg, args)
 		seg.End()
 	}
 	return result, err
@@ -197,6 +200,7 @@ func (w *wrapConn) QueryContext(ctx context.Context, query string, args []driver
 	rows, err := w.original.(driver.QueryerContext).QueryContext(ctx, query, args)
 	if err != driver.ErrSkip {
 		seg := w.bld.useQuery(query).startSegmentAt(ctx, startTime)
+		w.bld.ParseArgs(&seg, args)
 		seg.End()
 	}
 	return rows, err
@@ -237,6 +241,7 @@ func (w *wrapStmt) CheckNamedValue(v *driver.NamedValue) error {
 func (w *wrapStmt) ExecContext(ctx context.Context, args []driver.NamedValue) (driver.Result, error) {
 	segment := w.bld.startSegment(ctx)
 	result, err := w.original.(driver.StmtExecContext).ExecContext(ctx, args)
+	w.bld.ParseArgs(&segment, args)
 	segment.End()
 	return result, err
 }
@@ -245,6 +250,7 @@ func (w *wrapStmt) ExecContext(ctx context.Context, args []driver.NamedValue) (d
 func (w *wrapStmt) QueryContext(ctx context.Context, args []driver.NamedValue) (driver.Rows, error) {
 	segment := w.bld.startSegment(ctx)
 	rows, err := w.original.(driver.StmtQueryContext).QueryContext(ctx, args)
+	w.bld.ParseArgs(&segment, args)
 	segment.End()
 	return rows, err
 }
